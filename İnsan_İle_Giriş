@@ -1,0 +1,35 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package object.ilk;
+
+/**
+ *
+ * @author Kemal
+ */
+public class Objectİlk {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        System.out.println("Merhaba Bilgisayar Kavramlari");
+        insan ali=new insan();
+        ali.boy=180;
+        ali.kilo=70;
+        ali.yas=19;
+        System.out.println("Ali'nin yaşı= "+ali.yas+" Ali'nin boyu= "+ali.boy+" Ali'nin kilosu= "+ali.kilo);
+        insan veli=new insan();
+        veli.boy=175;
+        veli.kilo=70;
+        veli.yas=19;
+        System.out.println( "veli'nin yaşı= " +   veli.yas+"  veli'nin boyu= " +veli.boy+"  veli'nin kilosu= " + veli.kilo);
+        
+                
+    }
+    
+}
