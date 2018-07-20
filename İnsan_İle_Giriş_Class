@@ -3,18 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package object.ilk;
+package object.ilk;//bu package ı yazmazsak insan classının object ilk projesinde olduğu anlaşılmaz.
 
 /**
  *
  * @author Kemal
  */
 public class insan {
-    float boy;
+    double boy;
     int kilo;
     int yas; 
-    void yemek()
+    //int gelir;
+    void yemek()//yemek istediğinde kiloyu 1 arttır.
     {
         kilo++;
     }
+
 }
