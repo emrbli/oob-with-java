@@ -5,31 +5,82 @@
  */
 package object.ilk;
 
+import java.util.*;
+
 /**
  *
  * @author Kemal
  */
 public class Objectİlk {
 
+    int abc;//  **1** numara
+    static int qwe;// **1** numara buda 2.yol
+    
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        int a;
+        Scanner input=new Scanner(System.in);
+        
+        /* 
+        static olan alandan static olmayan alana erişilemez mesela şu anda yazdığım yer static bir yer olan main fonksiyonu
+        buraya bir değişken koyup başka bir yerden erişemem sadece önce değişkenin bulunduğu yere erişip ondan sonra değişkene erişebilirim
+        mesela **1** numaralı yere değişken atadım.
+        
+        sonrada  **2** numaralı yerde ona eriştim.
+        
+        */
+        
+        // **2** numara //  abc=13; böyle yazarsak hata verir önce bulunan yere erişmeliyiz.
+        Objectİlk baglantı = new Objectİlk();//abc değişkenine erişmek için bir baglantı değişkeni oluşturduk.
+        baglantı.abc=123;//işte bu stilde static yerdeki değişkene ulaştık aynısı classlar içinde geçerlidir.
+        qwe=321; // **2** numara // buda 2.yol
+        
         
         System.out.println("Merhaba Bilgisayar Kavramlari");
-        insan ali=new insan();
-        ali.boy=180;
+        calisan ali=new calisan();
+        ali.boy=1.85;
         ali.kilo=70;
         ali.yas=19;
-        System.out.println("Ali'nin yaşı= "+ali.yas+" Ali'nin boyu= "+ali.boy+" Ali'nin kilosu= "+ali.kilo);
-        insan veli=new insan();
-        veli.boy=175;
-        veli.kilo=70;
-        veli.yas=19;
-        System.out.println( "veli'nin yaşı= " +   veli.yas+"  veli'nin boyu= " +veli.boy+"  veli'nin kilosu= " + veli.kilo);
+        ali.gelir=2500;
         
-                
+        
+        calisan veli=new calisan();
+        veli.boy=1.91;
+        veli.kilo=80;
+        veli.yas=20;
+        veli.gelir=2400;
+        
+        System.out.println("Yemek İstermisin \nEvet[1]\nHayır[2]");
+        a=input.nextInt();
+        switch(a){
+            case 1:
+                    ali.yemek();
+                    veli.yemek();
+                    yazdır(ali,veli);
+                    break;
+            case 2:
+                    yazdır(ali,veli);
+                    break;
+            default:
+                    System.out.println("Yanlış Giriş Yaptınız!");
+                    break;
+        }
+        
+        ali.zam(100);
+        veli.zam(120);
+        System.out.println("Ali'nin zamlı geliri: "+ali.gelir);
+        System.out.println("Veli'nin zamlı geliri: "+veli.gelir);
+        
+        
+    }//"calisan", insanın tüm özelliklerine sahiptir.   
+    private static void yazdır(calisan insan1,calisan insan2)//calisan class ı ayrı bir class olup main içinde olmadığı için (calisan insan1) şeklinde yazdık.
+    {
+        System.out.println("Ali'nin yaşı= "+insan1.yas+" Ali'nin boyu= "+insan1.boy+" Ali'nin kilosu= "+insan1.kilo+" Ali'nin geliri= "+insan1.gelir);
+        System.out.println( "Veli'nin yaşı= " +   insan2.yas+"  Veli'nin boyu= " +insan2.boy+"  Veli'nin kilosu= " + insan2.kilo+" Veli'nin geliri= "+insan2.gelir);
     }
     
 }
