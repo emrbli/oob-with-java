@@ -1,0 +1,76 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package object2;
+
+
+class insan{
+    int boy;
+}
+
+class ogrenci extends insan implements Cloneable{//Klonlanabilir olduğunu belirttik.
+    Object kopyala() throws CloneNotSupportedException{
+        return this.clone();
+    }
+    ogrenci kopyala2(){//farklı türü
+        ogrenci temp=new ogrenci();
+        temp.boy=this.boy;
+        return temp;
+    }
+    boolean equals(ogrenci rhs){
+        /*if (this.boy==rhs.boy) {
+            return true;
+        }
+        else {
+            return false;
+        }*/
+        return this.boy==rhs.boy;//üstteki ile aynı.
+    }
+    public String toString(){//**1** 
+        return "bu objenin boyu "+this.boy;
+    }
+    
+}
+
+
+public class Object2 {
+
+    public static void main(String[] args) throws CloneNotSupportedException {
+        insan ali = new insan();
+        insan ahmet=ali;//shallow copy(sığ kopyalama)
+        ali.boy=180;
+    
+        if (ali==ahmet) {
+        System.out.println("Eşitler");        
+        }
+        if (ali.equals(ahmet)) {//burada fonksiyon olarak eşit olduğunu kontrol eder.
+            System.out.println("Eşitler2");
+        }
+
+        ogrenci ayse = new ogrenci();
+        ayse.boy=190;
+        ogrenci fatma=(ogrenci)ayse.kopyala();//deep copy (derin kopyalama)
+        System.out.println("aysenin boyu= "+ ayse.boy);
+        System.out.println("fatmanin boyu= "+fatma.boy);
+        fatma.boy=190;
+        System.out.println("aysenin boyu= "+ayse.boy);
+        System.out.println("fatmanin boyu= "+fatma.boy);
+        
+        ogrenci elif=(ogrenci)fatma.kopyala2();
+        System.out.println("elifin boyu= "+elif.boy);
+        
+        
+        if (ayse.equals(fatma)) {//burada çalışır çünkü sadece boyuna baktık.
+            System.out.println("Eşitler3");
+        }
+          if (ayse==fatma) {
+            System.out.println("Eşitler4");//burada içerik olatak aynılar ama obje olarak farklılar.
+        }
+          
+          System.out.println(ayse);//burada lokasyonunu belirtir.// ama **1** numaralı method sayesinde buyunu verecek.
+          System.out.println(ayse.hashCode());//hash code objenin özel kodudur.
+    }
+    
+}
