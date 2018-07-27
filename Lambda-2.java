@@ -16,7 +16,7 @@ public class Lambda2 {
 
     interface lambda{
     long calistir(long x);
-}
+} 
     /**
      * @param args the command line arguments
      */
