@@ -1,0 +1,85 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package object.ilk;
+
+/**
+ *
+ * @author Kemal
+ */
+/**
+*extends ve interface anlatım...
+*
+*>>extends bir sınıfa ait kişinin , o sınıfa ait tüm özellikleri içermesine denir
+*çalışan örneğinde olduğu gibi 
+*çalışan bir insandır. o zaman çalışan insanın tüm özelliklerine sahiptir
+*ama çalışmayan , çalışanın tüm özelliklerine sahip değildir.
+*sadece insanın tüm özelliklerine sahiptir.
+*
+*>>interfacede ise..  
+*bir bisiklet düşünelim bu bisikletin sahibi murat olsun. muratın bisikleti ,bisiklet interface'i yani bisiklet kuralları içerisinde bulunan tüm kurallara uymak zorundadır.
+*yani murat'ın bisikleti, bisikletin  vitesi,tekeri vs. gibi özelliklere sahip olmak zorundadır.
+*
+*aşağıdaki bisiklet kuralları(interface(arayüz)) ve murat'ın bisikleti gibi.
+*                                            
+*                                           
+*                                            interface Bicycle {
+*
+*                                                //  wheel revolutions per minute
+*                                                void changeCadence(int newValue);
+*                                                void changeGear(int newValue);*
+*
+*                                                void speedUp(int increment);
+*
+ *                                               void applyBrakes(int decrement);
+*                                          }
+*                                            To implement this interface, the name of your class would change (to a particular brand of bicycle, for example, such as ACMEBicycle), and you'd use the implements keyword in the class declaration:
+*
+*                                           class MURATBicycle implements Bicycle {
+*
+*                                                int cadence = 0;
+*                                               int speed = 0;
+*                                                int gear = 1;
+*
+*                                               // The compiler will now require that methods
+*                                               // changeCadence, changeGear, speedUp, and applyBrakes
+*                                               // all be implemented. Compilation will fail if those
+*                                               // methods are missing from this class.
+*
+*                                                void changeCadence(int newValue) {
+*                                                     cadence = newValue;
+*                                                }
+*
+*                                               void changeGear(int newValue) {
+*                                                     gear = newValue;
+*                                                }
+*
+*                                                void speedUp(int increment) {
+*                                                     speed = speed + increment;   
+*                                                }
+*
+*                                                void applyBrakes(int decrement) {
+*                                                     speed = speed - decrement;
+*                                                }
+*
+*                                                void printStates() {
+*                                                     System.out.println("cadence:" +
+*                                                         cadence + " speed:" + 
+*                                                         speed + " gear:" + gear);
+*                                                }
+*                                            }
+*/
+
+
+
+public class calisan extends insan{//her calısan insan özelliklerini alabilsin diye "extends insan" kodunun ekledik.
+    
+    int gelir;
+
+      void zam(int oran)
+    {
+        gelir=gelir+(gelir*oran/100);
+    }
+}

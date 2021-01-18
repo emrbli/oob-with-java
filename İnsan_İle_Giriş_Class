@@ -1,0 +1,22 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package object.ilk;//bu package ı yazmazsak insan classının object ilk projesinde olduğu anlaşılmaz.
+
+/**
+ *
+ * @author Kemal
+ */
+public class insan {
+    double boy;
+    int kilo;
+    int yas; 
+    //int gelir;
+    void yemek()//yemek istediğinde kiloyu 1 arttır.
+    {
+        kilo++;
+    }
+
+}
